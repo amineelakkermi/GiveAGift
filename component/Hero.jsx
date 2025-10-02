@@ -1,129 +1,109 @@
 import Image from "next/image";
+
+/* Shapes Part */
+import arrow from "../public/images/arrow.png";
+import arrow2 from "../public/images/arrow2.png";
+import group from "../public/images/group.png";
+import group2 from "../public/images/group2.png";
+
+/* Mockups */
 import mockup1 from "../public/images/mockup1.png";
+import mockup11 from "../public/images/mockup11.png";
 import mockup2 from "../public/images/mockup2.png";
-import playStore from "../public/images/playStore.svg";
-import appStore from "../public/images/appStore.svg";
-import arrowTitle from "../public/images/arrowTitle.png";
-import arrowDownload from "../public/images/arrowDownload.svg";
-import styles, { layout } from "@/styles/style";
+import mockup3 from "../public/images/mockup3.png";
+
+import styles from "@/styles/style";
+import Title from "./Title";
 
 export default function Hero({ lang = "ar" }) {
-
   const t =
     lang === "en"
       ? {
-          title: "Book or receive bookings With ease",
-          paragraph1:
-            "A smart application that combines customers and barbers in one easy and fast platform.",
-          paragraph2:
-            "Whether you are looking for a barber near you or running your salon and want to organize your appointments, our app is the perfect solution.",
-        }
+        title: "Send the most beautiful gifts instantly ✨",
+        paragraph1:
+          "With GiveAGift, sending gifts has never been easier. Choose the gift, add your touch, and let us take care of the rest — anytime, anywhere.",
+      }
       : {
-          title: "احجز أو استقبل الحجوزات بكل سهولة",
+          title: "أرسل أجمل الهدايا في لحظة ✨",
           paragraph1:
-            "تطبيق ذكي يجمع بين العملاء والحلاقين في منصة واحدة سهلة وسريعة.",
-          paragraph2:
-            "سواء كنت تبحث عن حلاق قريب منك أو تدير صالونك وتريد تنظيم مواعيدك، تطبيقنا هو الحل الأمثل.",
+            "مع GiveAGift، أصبح إرسال الهدايا أسهل من أي وقت مضى. اختر الهدية، أضف لمستك، ودعنا نهتم بالباقي أينما كنت، وفي أي وقت.",
         };
 
   return (
     <section
       id="hero"
-      className={`relative overflow-hidden bg-[#202641] flex justify-center items-center w-full min-h-[100vh] ${styles.padding}`}
+      className="relative bg
+        flex justify-center items-center w-full h-screen overflow-y-hidden lg:px-12 px-6 lg:pt-12 pt-6 pb-0"
     >
-      {/* Shape */}
-      <div className="shape1_en" />
-      <div className="shape2_en" />
-      
+      {/* Container */}
+      <div className="relative h-full max-w-7xl mx-auto z-40 flex flex-col justify-center items-center text-center">
+        
+        {/* Title */}
+        <Title
+        text={t.title}
+        mt="mt-24"
+        textColor="text-white"
+        svgColor="#fff"
+        />
 
-      {/* Content */}
-      <div
-        className={`${layout.sectionRow} z-40 justify-start items-center max-w-7xl mx-auto`}
-      >
-        {/* Text */}
-        <div className={`${layout.sectionInfo} relative`}>
-          {/* Arrow */}
-          <div
-            className={`absolute hidden lg:block top-8 xl:top-16 ${lang === "en" ? "right-8 xl:right-20 rotate-90" : "left-8 xl:left-20"} w-[50px] h-[50px]`}
-          >
-            <Image
-              src={arrowTitle}
-              alt="Arrow Title"
-              priority
-              className="object-contain w-full h-full "
-            />
+        {/* Paragraph */}
+        <p className={`${styles.paragraph} text-center max-w-[480px] text-gray-200 mt-4`}>
+          {t.paragraph1}
+        </p>
+
+        {/* Shapes */}
+        <div className="shapes_container hidden lg:block">
+          {/* Left */}
+          <div className="absolute top-[25%] right-0">
+            <Image src={group} className="w-[100px] h-[100px]" alt="group" />
+          </div>
+          <div className="absolute top-[45%] right-10">
+            <Image src={arrow} className="w-[100px] h-[100px]" alt="arrow" />
           </div>
 
-          <h1 className={`${styles.title} max-w-[500px] mt-24 text-white`}>
-            {t.title}
-          </h1>
-          <p className={`${styles.paragraph} max-w-[550px] text-gray-200`}>
-            {t.paragraph1}
-          </p>
-          <p className={`${styles.paragraph} mb-8 max-w-[550px]  text-gray-200`}>
-            {t.paragraph2}
-          </p>
-
-          {/* Download Buttons */}
-          <div className="mt-8 flex flex-wrap gap-4 justify-center lg:justify-start relative">
-            {/* Arrow */}
-            <div className={`absolute hidden lg:block -top-20 ${lang === "en" ? "-right-32 rotate-90" : "-left-28"} w-[100px] h-[100px]`}>
-              <Image
-                src={arrowDownload}
-                alt="Arrow Download"
-                priority
-                className="object-contain w-full h-full"
-              />
-            </div>
-
-            <a
-              href="#"
-              className="block duration-300 hover:scale-105 transition-transform"
-            >
-              <Image src={appStore} alt="App Store" className="h-12 w-auto" />
-            </a>
-            <a
-              href="#"
-              className="block duration-300 hover:scale-105 transition-transform"
-            >
-              <Image
-                src={playStore}
-                alt="Google Play"
-                className="h-12 w-auto"
-              />
-            </a>
+          {/* Right */}
+          <div className="absolute top-[15%] -left-36">
+            <Image src={group2} className="w-[200px] h-[200px]" alt="group2" />
+          </div>
+          <div className="absolute top-[45%] -left-5">
+            <Image
+              src={arrow2}
+              className="w-[100px] h-[100px] rotate-[360deg]"
+              alt="arrow2"
+            />
           </div>
         </div>
 
         {/* Mockups */}
-        <div className={`${layout.sectionImg} ${lang === "en" ? "lg:ml-10 ml-0" : "lg:mr-10 mr-0"} relative`}>
-          {lang === "en" ? (
-            <>
-              <Image
-                src={mockup1}
-                alt="App Screen 1"
-                className="object-cover w-full max-w-[200px] sm:max-w-[240px] lg:max-w-[280px] xl:max-w-[320px]"
-              />
-              <Image
-                src={mockup2}
-                alt="App Screen 2"
-                className="object-cover w-full max-w-[200px] sm:max-w-[240px] lg:max-w-[280px] xl:max-w-[320px] -ml-[15%]"
-              />
-            </>
-          ) : (
-            <>
-              <Image
-                src={mockup1}
-                alt="App Screen 1"
-                className="object-cover w-full max-w-[200px] sm:max-w-[240px] lg:max-w-[280px] xl:max-w-[320px]"
-              />
-              <Image
-                src={mockup2}
-                alt="App Screen 2"
-                className="object-cover w-full max-w-[200px] sm:max-w-[240px] lg:max-w-[280px] xl:max-w-[320px] -mr-[15%]"
-              />
-            </>
-          )}
+        <div dir="rtl" className="absolute bottom-0 flex translate-y-4 justify-center items-center mt-4 mb-0 relative">
+          {/* Left Mockup */}
+          <Image
+            src={mockup2}
+            alt="App Screen 2"
+            className={`object-cover -z-10 translate-y-28 -translate-x-8
+              w-full max-w-[160px] sm:max-w-[200px] lg:max-w-[240px] xl:max-w-[300px] 
+              -ml-[10%]`}
+          />
+
+          {/* Center Mockup responsive */}
+          <picture>
+            <source srcSet={mockup11.src} media="(min-width: 640px)" />
+            <Image
+              src={mockup1}
+              alt="App Screen 1"
+              className="w-full  object-cover translate-y-20 sm:translate-y-16 xl:translate-y-4 
+                z-30 max-w-[180px] sm:max-w-[280px] lg:max-w-[300px] xl:max-w-[350px]"
+            />
+          </picture>
+
+          {/* Right Mockup */}
+          <Image
+            src={mockup3}
+            alt="App Screen 3"
+            className={`object-cover -z-10 translate-y-28  translate-x-8 
+              w-full max-w-[160px] sm:max-w-[200px] lg:max-w-[240px] xl:max-w-[300px] 
+              -mr-[10%]`}
+          />
         </div>
       </div>
     </section>

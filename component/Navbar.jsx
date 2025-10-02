@@ -35,26 +35,27 @@ export default function Navbar() {
   const t =
     lang === "en"
       ? {
-          home: "Home",
           features: "Application Features ",
+          about: "Our App",
+      
+          reviews: "Reviews",
           download: "Download the application",
-          downloadBtn: "Download",
-          openMenu: "Open menu",
           closeMenu: "Close menu",
         }
       : {
-          home: "الرئيسية",
-          features: "مميزات التطبيق",
-          download: "حمل التطبيق",
-          downloadBtn: "تحميل",
-          openMenu: "فتح القائمة",
+          features: "المميزات",
+          about: "تعرف على تطبيقنا",
+          reviews: "التقييمات",
+          download: "حمل تطبيقنا",
           closeMenu: "اغلاق القائمة",
         };
 
   const menuItems = [
-    { id: "hero", text: t.home },
     { id: "featuresClient", text: t.features },
+    { id: "about", text: t.about },
+    { id: "reviews", text: t.reviews },
     { id: "download", text: t.download },
+
   ];
 
 
@@ -108,7 +109,7 @@ export default function Navbar() {
   return (
     <header
       className={`fixed w-full flex justify-center items-center max-h-[80px] z-50 transition-all duration-300 ${styles.padding} ${
-        isScrolled ? "shadow-md bg-[#202641] backdrop-blur" : "bg-transparent"
+        isScrolled ? "shadow-md bg backdrop-blur" : "bg-transparent"
       } overflow-visible`}
     >
       <div className="container max-w-7xl mx-auto">
@@ -152,14 +153,9 @@ export default function Navbar() {
 
           <div className="flex items-center gap-3">
             <button
-              className="rounded-full px-6 py-3 text-[16px] font-bold"
-              style={{ backgroundColor: "#E1BD80", color: "#1E1E1E" }}
-            >
-              {t.downloadBtn}
-            </button>
-            <button
               onClick={toggleLanguage}
-              className="rounded-full px-4 py-3 text-[14px] font-bold border border-white/30 text-white hover:bg-white/10 transition-colors"
+              className="rounded-[36px] px-5 py-3 text-[14px] font-bold
+              bg-white text-blue cursor-pointer transition-colors"
               aria-label={lang === "ar" ? "تغيير اللغة" : "Change language"}
               title={lang === "ar" ? "تغيير اللغة" : "Change language"}
             >
@@ -191,25 +187,18 @@ export default function Navbar() {
             </a>
 
             <div className="flex items-center gap-2">
-              {/* Download Button */}
-              <button
-                className="rounded-full px-4 py-2 text-[14px] font-bold"
-                style={{ backgroundColor: "#E1BD80", color: "#1E1E1E" }}
-                onClick={() => scrollToSection("download")}
-              >
-                {t.downloadBtn}
-              </button>
+              
               
               {/* Language Button */}
               <button
-                onClick={toggleLanguage}
-                className="rounded-full px-3 py-2 text-[12px] font-bold border border-white/30 text-white hover:bg-white/10 transition-colors"
-                aria-label={lang === "ar" ? "تغيير اللغة" : "Change language"}
-                title={lang === "ar" ? "تغيير اللغة" : "Change language"}
-              >
-                {lang === "ar" ? "EN" : "AR"}
-              </button>
-
+              onClick={toggleLanguage}
+              className="rounded-[36px] px-5 py-3 text-[14px] font-bold
+              bg-white text-blue cursor-pointer transition-colors"
+              aria-label={lang === "ar" ? "تغيير اللغة" : "Change language"}
+              title={lang === "ar" ? "تغيير اللغة" : "Change language"}
+            >
+              {lang === "ar" ? "EN" : "AR"}
+            </button>
               {/* Menu Button */}
               <button
                 onClick={() => setIsOpen(!isOpen)}
@@ -228,7 +217,7 @@ export default function Navbar() {
                 onClick={() => setIsOpen(false)}
                 aria-hidden="true"
               />
-              <div className="fixed right-0 top-0 h-screen w-80 max-w-[85vw] bg-[#202641] border-l border-white/10 p-6 shadow-2xl overflow-y-auto">
+              <div className="fixed right-0 top-0 h-screen w-80 max-w-[85vw] bg border-l border-white/10 p-6 shadow-2xl overflow-y-auto">
                 <div className="flex items-center justify-between w-full">
                   <a
                     href="#hero"

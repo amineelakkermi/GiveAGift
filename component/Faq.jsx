@@ -1,6 +1,9 @@
 "use client";
 import styles from "@/styles/style";
-import React, { useEffect, useState } from "react";
+import greyGroup from "../public/images/greyGroup.png";
+import React, { act, useEffect, useState } from "react";
+import Image from "next/image";
+import Title from "./Title";
 
 const Accordion = () => {
   const [lang, setLang] = useState("ar");
@@ -21,55 +24,88 @@ const Accordion = () => {
   const t =
     lang === "en"
       ? {
-          title: "Frequently Asked Questions (FAQ)",
+          title: "Frequently Asked Questions",
           items: [
             {
-              header: "1. How can I book an appointment with a barber?",
-              text: "Enter the app, choose the right barber according to the location or rating, then select the time and click Book Now",
+              header: "Is the card sent immediately?",
+              text: "Yes, the digital card is sent to the recipient within seconds of order confirmation.",
             },
             {
-              header: "2. Can I pay electronically?",
-              text: "Yes, the application supports secure and local electronic payment methods, in addition to cash if available from the barber.",
+              header: "What payment methods are available?",
+              text: "What payment methods are available?",
             },
             {
-              header: "3. Can I modify or cancel my appointment?",
-              text: "You can modify or cancel your appointment within the specified time limit according to the barber's policy.",
+              header: "How does the card reach the recipient?",
+              text: "How does the card reach the recipient?",
             },
             {
-              header: "4. How can I contact the barber?",
-              text: "You can contact the barber directly through the app via the integrated messaging system, or call them using the phone number available in their profile.",
+              header: "Does the app work outside Saudi Arabia?",
+              text: "Does the app work outside Saudi Arabia?",
+            },
+            {
+              header: "Can I send a card to more than one person?",
+              text: "Can I send a card to more than one person?",
             },
           ],
+          
         }
       : {
-          title: "الأسئلة الشائعة (FAQ)",
+          title: "الأسئلة الشائعة",
           items: [
             {
-              header: "1. كيف يمكنني حجز موعد مع حلاق؟",
-              text: "ادخل التطبيق، اختر الحلاق المناسب حسب الموقع أو التقييم، ثم حدد الوقت واضغط ‘احجز الآن’.",
+              header: "هل يتم إرسال البطاقة فورًا؟",
+              text: "نعم، يتم إرسال البطاقة الرقمية للمستلم خلال ثوانٍ من تأكيد الطلب.",
             },
             {
-              header: "2. هل أستطيع الدفع إلكترونيًا؟",
-              text: "نعم، يدعم التطبيق طرق دفع إلكترونية آمنة ومحلية، بالإضافة للدفع نقدًا إذا كان متاحًا من الحلاق.",
+              header: "ما طرق الدفع المتوفرة؟",
+              text: "ما طرق الدفع المتوفرة؟",
             },
             {
-              header: "3. هل يمكنني تعديل أو إلغاء الحجز؟",
-              text: "يمكنك التعديل أو الإلغاء ضمن المهلة المحددة وفق سياسة الحلاق.",
+              header: "كيف تصل البطاقة إلى المستلم؟",
+              text: "كيف تصل البطاقة إلى المستلم؟",
             },
             {
-              header: "4. كيف أتواصل مع الحلاق؟",
-              text: "يمكنك التواصل مع الحلاق مباشرة من خلال التطبيق عبر نظام الرسائل المدمج، أو الاتصال به عبر رقم الهاتف المتوفر في ملفه الشخصي.",
+              header: " هل التطبيق يعمل خارج السعودية؟",
+              text: " هل التطبيق يعمل خارج السعودية؟",
+            },
+            {
+              header: "هل يمكن إرسال بطاقة لأكثر من شخص؟",
+              text: "هل يمكن إرسال بطاقة لأكثر من شخص؟",
             },
           ],
         };
 
   return (
     <section dir={lang === "en" ? "ltr" : "rtl"} className={`relative z-20 overflow-hidden bg-white ${styles.padding}`}>
-      <div className={`${styles.marginY} max-w-7xl mx-auto`}>
+    <div className="absolute -z-10 hidden lg:block -bottom-8 right-0 w-[150px] sm:w-[180px] md:w-[200px] lg:w-[206px] h-auto opacity-100">
+    <svg
+    viewBox="0 0 206 288"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    className="w-full h-auto"
+    >
+    <path
+      d="M144.459 146.982L36.8573 171.761L56.6807 257.843C58.8713 267.355 64.7511 275.608 73.0265 280.785C81.3019 285.963 91.2951 287.641 100.808 285.45L172.542 268.931M144.459 146.982L172.542 268.931M144.459 146.982L129.591 82.4213M144.459 146.982L33.2706 172.587C27.5631 173.902 21.5672 172.895 16.6019 169.789C11.6367 166.682 8.10884 161.731 6.79447 156.023L1.83862 134.503C0.524247 128.795 1.53102 122.799 4.63746 117.834C7.74389 112.869 12.6955 109.341 18.4031 108.027L129.591 82.4213M144.459 146.982L252.06 122.203L271.884 208.284C274.074 217.797 272.396 227.79 267.219 236.065C262.042 244.341 253.789 250.22 244.276 252.411L172.542 268.931M144.459 146.982L255.647 121.377C261.355 120.063 266.306 116.535 269.413 111.57C272.519 106.604 273.526 100.608 272.211 94.9009L267.256 73.3806C265.941 67.673 262.413 62.7214 257.448 59.615C252.483 56.5085 246.487 55.5017 240.779 56.8161L129.591 82.4213M129.591 82.4213L121.332 46.5542M129.591 82.4213L93.7241 90.6811C84.2116 92.8717 74.2184 91.1937 65.943 86.0163C57.6676 80.8389 51.7878 72.5862 49.5972 63.0736C47.4066 53.5611 49.0845 43.5679 54.2619 35.2925C59.4393 27.0171 67.6921 21.1374 77.2046 18.9467C81.9148 17.8621 86.7924 17.7157 91.5591 18.5161C96.3258 19.3165 100.888 21.0479 104.986 23.6115C109.083 26.1751 112.636 29.5206 115.44 33.4571C118.245 37.3936 120.247 41.844 121.332 46.5542M129.591 82.4213L165.458 74.1616C174.971 71.971 183.224 66.0912 188.401 57.8158C193.579 49.5404 195.256 39.5472 193.066 30.0347C190.875 20.5221 184.995 12.2694 176.72 7.09197C168.445 1.91458 158.452 0.236626 148.939 2.42725C139.426 4.61787 131.174 10.4976 125.996 18.773C120.819 27.0484 119.141 37.0416 121.332 46.5542"
+      stroke="#222A40"
+      strokeOpacity="0.2"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    </svg>
+    </div>
+
+      <div className={`flex flex-col justify-center items-center max-w-7xl mx-auto`}>
         <div className="-mx-4 flex flex-wrap">
           <div className="w-full px-4">
             <div className="mx-auto mb-[60px] max-w-[720px] text-center lg:mb-20">
-              <h2 className="mb-4 text-3xl font-bold text-dark dark:text-white sm:text-[40px]/[48px]">{t.title}</h2>
+            <Title
+            text={t.title}
+            mt="mt-0"
+            textColor="text-blue"
+            svgColor="#A3262A"
+            />
+                    
             </div>
           </div>
         </div>
@@ -101,22 +137,39 @@ const AccordionItem = ({ header, text, lang }) => {
   const textAlign = lang === "en" ? "text-left" : "text-right";
 
   return (
-    <div className="mb-8 w-full rounded-[16px] bg-white p-4 border border-[#EEEEEE] sm:p-4 lg:px-4 xl:px-4" style={{boxSizing: 'border-box', display: 'flex', justifyContent: 'center' , alignItems: 'start' ,   flexDirection: 'column', gap: '10px', maxWidth: '1240px', minHeight: '97px'}}>
+    <div
+      className={`mb-8 min-w-[100%] md:min-w-[500px] lg:min-w-[896px] rounded-[16px] bg-white px-4 py-3 sm:px-4 sm:py-4 
+                  ${active ? "border-2 min-h-[162px]" : "min-h-[122px]"}`}
+      style={{
+        boxSizing: 'border-box',
+        boxShadow: '0px 6px 16px rgba(34, 42, 64, 0.18)',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'start',
+        flexDirection: 'column',
+        gap: '10px',
+      }}
+    >
       <button className={`faq-btn flex w-full ${rowDir}`} onClick={handleToggle}>
-        <div className={`${iconMargin} flex h-10 w-10 shrink-0 items-center justify-center rounded-full border-2 border-[#0C0B0B] bg-primary/5 text-[#0C0B0B]`}>
+        <div
+          className={`${iconMargin} ${lang === "en" ? "rotate-180" : "rotate-0"} 
+                     flex h-6 lg:h-10 w-6 lg:w-10 shrink-0 items-center justify-center rounded-full bg-primary/5 text-[#0C0B0B]`}
+        >
           {active ? (
-            <svg width="10" height="12" viewBox="0 0 10 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M8.51953 4.14014L5.03125 0.651856C5.01364 0.634249 4.9844 0.634249 4.9668 0.651856L1.47949 4.14014C1.47443 4.14521 1.47069 4.15004 1.46875 4.15479C1.46668 4.15989 1.46582 4.16617 1.46582 4.17236C1.46586 4.18428 1.46993 4.19481 1.47852 4.20361C1.49612 4.22122 1.52536 4.22122 1.54297 4.20361L4.9541 0.792481L4.9541 11.3159C4.95416 11.3407 4.97423 11.3608 4.99902 11.3608C5.02381 11.3608 5.04388 11.3407 5.04395 11.3159L5.04394 0.792481L5.89746 1.646L8.45508 4.20459C8.47269 4.22209 8.50196 4.22216 8.51953 4.20459C8.53706 4.18706 8.53699 4.15771 8.51953 4.14014Z" fill="#0C0B0B" stroke="#0C0B0B"/>
+            <svg width="full" height="full" viewBox="0 0 51 51" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="25.3309" cy="25.3309" r="25.3309" transform="matrix(-1 0 0 1 50.6602 0)" fill="#A3262A"/>
+              <path d="M33.5859 22.2212L25.3293 30.4405L17.0728 22.2212" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
           ) : (
-            <svg className="transform rotate-180" width="10" height="12" viewBox="0 0 10 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-              <path d="M8.51953 4.14014L5.03125 0.651856C5.01364 0.634249 4.9844 0.634249 4.9668 0.651856L1.47949 4.14014C1.47443 4.14521 1.47069 4.15004 1.46875 4.15479C1.46668 4.15989 1.46582 4.16617 1.46582 4.17236C1.46586 4.18428 1.46993 4.19481 1.47852 4.20361C1.49612 4.22122 1.52536 4.22122 1.54297 4.20361L4.9541 0.792481L4.9541 11.3159C4.95416 11.3407 4.97423 11.3608 4.99902 11.3608C5.02381 11.3608 5.04388 11.3407 5.04395 11.3159L5.04394 0.792481L5.89746 1.646L8.45508 4.20459C8.47269 4.22209 8.50196 4.22216 8.51953 4.20459C8.53706 4.18706 8.53699 4.15771 8.51953 4.14014Z" fill="#0C0B0B" stroke="#0C0B0B"/>
+            <svg width="full" height="full" viewBox="0 0 51 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="25.3309" cy="25.3309" r="25.3309" transform="matrix(1.19249e-08 -1 -1 -1.19249e-08 50.6602 51.3232)" fill="#A3262A"/>
+              <path d="M28.439 34.249L20.2197 25.9924L28.439 17.7358" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
           )}
         </div>
 
         <div className={`w-full ${headerAlign}`}>
-          <h4 className="text-[20px] font-semibold text-[#0C0B0B]">{header}</h4>
+          <h4 className="text-[16px] lg:text-[20px] font-semibold text-[#0C0B0B]">{header}</h4>
         </div>
       </button>
 

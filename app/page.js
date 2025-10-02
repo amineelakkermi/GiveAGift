@@ -1,12 +1,12 @@
 import Image from "next/image";
-import textureBg from "../public/images/textureBg.png";
 import { LanguageProvider } from "@/component/LanguageProvider";
 import Navbar from "@/component/Navbar";
 import HeroWrapper from "@/component/HeroWrapper";
 import FeaturesClientWrapper from "@/component/FeaturesClientWrapper";
 import Faq from "@/component/Faq";
-import FeaturesBarberWrapper from "@/component/FeaturesBarberWrapper";
 import DownloadWrapper from "@/component/DownloadWrapper";
+import Carousel from "@/component/Carousel";
+import JoinUs from "@/component/JoinUs";
 
 export default function Page() {
   return (
@@ -14,24 +14,15 @@ export default function Page() {
       <main>
         
         <div className="relative">
-          {/* Background */}
-          <div className="absolute inset-0 z-10">
-            <Image
-              src={textureBg}
-              alt="Background texture"
-              fill
-              className="object-cover opacity-60 mix-blend-soft-light"
-              priority
-            />
-          </div>
-
+         
           {/* Navbar + Hero */}
           <Navbar />
           <HeroWrapper />
         </div>
 
         <FeaturesClientWrapper />
-        <FeaturesBarberWrapper />
+        <Carousel />
+        <JoinUs />
         <DownloadWrapper />
         <Faq />
       </main>

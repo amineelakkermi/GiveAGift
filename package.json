@@ -1,5 +1,5 @@
 {
-  "name": "barber-app",
+  "name": "GiveAGift",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -7,13 +7,13 @@
     "build": "next build",
     "start": "next start",
     "export": "next export"
-
   },
   "dependencies": {
     "next": "15.5.4",
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "react-icons": "^5.5.0"
+    "react-icons": "^5.5.0",
+    "swiper": "^12.0.2"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
