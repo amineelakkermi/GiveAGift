@@ -65,7 +65,7 @@ export default function Download({ lang = "ar" }) {
       <p className={`${styles.paragraph} max-w-[650px] z-20 text-white`}>{t.p2}</p>
 
         {/* Download Buttons */}
-        <div className="flex gap-4 flex-wrap justify-center z-20">
+        <div className="flex gap-8 flex-wrap justify-center z-20">
           <a
             href="#"
             className="block duration-300 hover:scale-105 transition-transform"
