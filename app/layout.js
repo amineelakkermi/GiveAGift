@@ -2,8 +2,8 @@ import "../styles/globals.css";
 import Footer from "../component/Footer";
 
 export const metadata = {
-  title: "BarberApp",
-  description: "تطبيق حجز وإدارة المواعيد للحلاقين",
+  title: "GiveAGift",
+  description: "تطبيق إلكتروني",
   icons: {
     icon: '/logo.png',
     shortcut: '/logo.png',
