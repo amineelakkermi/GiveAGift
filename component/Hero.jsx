@@ -19,12 +19,12 @@ export default function Hero({ lang = "ar" }) {
   const t =
     lang === "en"
       ? {
-        title: "Send the most beautiful gifts instantly ✨",
+        title: "Send the most beautiful gifts instantly",
         paragraph1:
           "With GiveAGift, sending gifts has never been easier. Choose the gift, add your touch, and let us take care of the rest — anytime, anywhere.",
       }
       : {
-          title: "أرسل أجمل الهدايا في لحظة ✨",
+          title: "أرسل أجمل الهدايا في لحظة",
           paragraph1:
             "مع GiveAGift، أصبح إرسال الهدايا أسهل من أي وقت مضى. اختر الهدية، أضف لمستك، ودعنا نهتم بالباقي أينما كنت، وفي أي وقت.",
         };
