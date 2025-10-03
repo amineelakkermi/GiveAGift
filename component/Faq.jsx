@@ -136,7 +136,7 @@ const AccordionItem = ({ header, text, lang }) => {
           )}
         </div>
 
-        <div className={`w-full ${headerAlign}`}>
+        <div className={`w-full ${headerAlign} ${lang === "en" ? "mr-0" : "mr-6"} `}>
           <h4 className="text-[20px] font-bold text-[#170F49]">{header}</h4>
         </div>
       </button>
