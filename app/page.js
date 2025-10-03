@@ -10,7 +10,6 @@ import JoinUs from "@/component/JoinUs";
 
 export default function Page() {
   return (
-    <LanguageProvider>
       <main>
         
         <div className="relative">
@@ -26,6 +25,5 @@ export default function Page() {
         <DownloadWrapper />
         <Faq />
       </main>
-    </LanguageProvider>
   );
 }

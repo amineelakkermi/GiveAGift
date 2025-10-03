@@ -67,6 +67,10 @@ const TikTokIcon = () => (
 );
 
 const Footer = () => {
+
+  const [showLogin, setShowLogin] = useState(false);
+
+
   const scrollToSection = (id) => {
     const cleanId = id.replace(/^[\/#]+/, '');
     const el = document.getElementById(cleanId);
@@ -125,21 +129,42 @@ const Footer = () => {
     <footer dir={lang === "en" ? "ltr" : "rtl"} className="bg">
       <div className="mx-auto max-w-7xl px-6 py-12 lg:px-8">
         <div className="flex flex-wrap items-center justify-between gap-10">
-          {/* LOGIN */}
-          <button
-          onClick={() => {
-          setIsOpen(true);
-          }}
-           className="font-bold text-[12px] text-blue bg-white flex justify-center items-center px-4 py-2 gap-5  rounded-[36px]" aria-label={t.emailAria}>
-          {t.login}
-          </button>
-
-          {/* Login modal */}
-      <LoginComponent isOpen={isOpen} setIsOpen={setIsOpen} />
         
-          <a href="#" className="font-bold text-[12px] text-blue bg-[#E1BD80] flex justify-center items-center px-4 py-2 gap-5  rounded-[36px]" aria-label={t.emailAria}>
 
-              {t.joinUs}
+           {/* Bouton Login */}
+      <div className="flex justify-center">
+        <button
+          onClick={() => setShowLogin(true)}
+          className="min-w-[97px]  text-[14px] p-3
+          flex justify-center items-center bg-white text-black
+          rounded-[36px] font-extrabold hover:bg-gray-200 transition"
+        >
+          {t.login}
+        </button>
+      </div>
+
+      {/* Modal pour Login */}
+      {showLogin && (
+        <div className="fixed inset-0 bg-black/50  flex items-center justify-center z-50">
+          <div className="bg-white text-black p-6 rounded-[16px] relative">
+            <button
+              onClick={() => setShowLogin(false)}
+              className="absolute top-3 right-3 text-gray-600 hover:text-black"
+            >
+              ✕
+            </button>
+            {showLogin && (
+            <LoginComponent isOpen={showLogin} setIsOpen={setShowLogin} />
+             )}
+          </div>
+        </div>
+      )}
+        
+          <a href="#" className="
+          min-w-[97px]  text-[14px] p-3
+          flex justify-center items-center bg-[#E1BD80] text-black
+          rounded-[36px] font-extrabold hover:bg-gray-200 transition">
+          {t.joinUs}
           </a>
 
 

@@ -1,5 +1,6 @@
 import "../styles/globals.css";
 import Footer from "../component/Footer";
+import { LanguageProvider } from "@/component/LanguageProvider";
 
 export const metadata = {
   title: "GiveAGift",
@@ -15,8 +16,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="ar" dir="rtl">
       <body className="bg-white">
+        <LanguageProvider>
         {children}
         <Footer />
+        </LanguageProvider>
+       
       </body>
     </html>
   );
