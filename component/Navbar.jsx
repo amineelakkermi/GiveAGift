@@ -56,8 +56,8 @@ export default function Navbar() {
   const menuItems = [
     { id: "featuresClient", text: t.features },
     { id: "about", text: t.about },
-    { id: "reviews", text: t.reviews },
     { id: "download", text: t.download },
+    { id: "join", text: t.joinUs },
 
   ];
 
