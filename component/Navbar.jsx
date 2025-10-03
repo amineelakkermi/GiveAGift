@@ -36,7 +36,6 @@ export default function Navbar() {
     lang === "en"
       ? {
           features: "Application Features",
-          joinUs: "Join from Zed stores",
           about: "Our App",
           joinUs: "Join",
       
@@ -46,7 +45,6 @@ export default function Navbar() {
         }
       : {
           features: "المميزات",
-          joinUs: "انضم من متاجر زد",
           about: "تعرف على تطبيقنا",
           reviews: "التقييمات",
           download: "حمل تطبيقنا",
@@ -57,8 +55,7 @@ export default function Navbar() {
     { id: "featuresClient", text: t.features },
     { id: "about", text: t.about },
     { id: "download", text: t.download },
-    { id: "join", text: t.joinUs },
-
+   
   ];
 
 
@@ -152,6 +149,7 @@ export default function Navbar() {
                 </span>
               </button>
             ))}
+            
           </nav>
 
           <div className="flex items-center gap-3">

@@ -14,7 +14,7 @@ export default function Title({
       className={`${styles.title} ${mt} text-center relative flex justify-center items-center relative`}
     >
       {/* SVG */}
-      <div className={`mb-8 w-[40px] md:w-[73px] h-[40px] md:h-[73px] flex ${lang === "en" ? "rotate-230" : "rotate-0"}
+      <div className={`w-[40px] md:w-[73px] h-[40px] md:h-[73px] flex ${lang === "en" ? "rotate-230" : "rotate-0"}
       justify-center items-center`}>
         <svg
           width="full"
