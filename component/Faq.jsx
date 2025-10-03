@@ -169,12 +169,12 @@ const AccordionItem = ({ header, text, lang }) => {
         </div>
 
         <div className={`w-full ${headerAlign}`}>
-          <h4 className="text-[16px] lg:text-[20px] font-semibold text-[#0C0B0B]">{header}</h4>
+          <h4 className="text-[16px] lg:text-[20px] font-bold text-[#0C0B0B]">{header}</h4>
         </div>
       </button>
 
       <div className={`${textAlign} duration-200 ease-in-out ${active ? "block" : "hidden"}`}>
-        <p className="text-[16px] font-normal leading-relaxed text-[#7E7E7E]">{text}</p>
+        <p className="text-[16px] lg:text-[18px] font-normal leading-relaxed text-[#7E7E7E]">{text}</p>
       </div>
     </div>
   );

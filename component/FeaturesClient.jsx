@@ -74,8 +74,8 @@ function FeatureCard({ icon, title, text}) {
       </div>
 
       {/* Texte */}
-      <div className="flex flex-col gap-1 flex-1 transition-colors duration-700 ease-in-out">
-        <h3 className="text-[18px] sm:text-[20px] lg:text-[22px] font-semibold text-[#000]">
+      <div className="flex flex-col gap-4 flex-1 transition-colors duration-700 ease-in-out">
+        <h3 className="text-[18px] sm:text-[20px] lg:text-[24px] font-semibold text-[#000]">
           {title}
         </h3>
         <p className="text-[14px] sm:text-[15px] lg:text-[16px] text-[#686868] leading-snug">

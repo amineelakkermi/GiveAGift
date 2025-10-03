@@ -47,7 +47,7 @@ export default function Hero({ lang = "ar" }) {
         />
 
         {/* Paragraph */}
-        <p className={`${styles.paragraph} text-center max-w-[480px] text-gray-200 mt-4`}>
+        <p className={`${styles.paragraph} text-center max-w-[480px] text-gray-200`}>
           {t.paragraph1}
         </p>
 

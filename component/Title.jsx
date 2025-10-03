@@ -40,8 +40,7 @@ export default function Title({
 
       {/* Texte */}
       <h1
-        className={`${textColor} text-[24px] sm:text-[28px] lg:text-[32px] font-bold`}
-      >
+        className={`${textColor} ${styles.title}`}>
         {text}
       </h1>
     </div>
