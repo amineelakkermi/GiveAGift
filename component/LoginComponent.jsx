@@ -52,12 +52,12 @@ export default function LoginComponent({ isOpen, setIsOpen }) {
 
         {/* Logo */}
         <div className="flex justify-center mb-4">
-          <Image src={redLogo} alt="Logo" width={100} height={100} />
+          <Image src={redLogo} alt="Logo" width={204} height={52} />
         </div>
 
         {/* Titre */}
-        <h2 className="text-2xl font-bold text-center mb-2">{t.title}</h2>
-        <p className="text-gray-600 text-center mb-8">{t.paragraph}</p>
+        <h2 className="text-[24px] text-[#1E2330] font-semibold text-center mb-2">{t.title}</h2>
+        <p className="text-black text-[14px] font-medium text-center mt-4 mb-8">{t.paragraph}</p>
 
         {/* Formulaire */}
         <form
@@ -67,7 +67,7 @@ export default function LoginComponent({ isOpen, setIsOpen }) {
         >
           {/* Champ Email */}
           <div className={lang === "ar" ? "text-right" : "text-left"}>
-            <label className="block text-gray-700 mb-2">
+            <label className="block text-black text-[14px] font-medium mb-2">
               {t.email} <span className="text-red-500">*</span>
             </label>
             <input
@@ -81,8 +81,8 @@ export default function LoginComponent({ isOpen, setIsOpen }) {
 
           {/* Champ Mot de passe */}
           <div className={lang === "ar" ? "text-right" : "text-left"}>
-            <label className="block text-gray-700 mb-2">
-              {t.password} <span className="text-red-500">*</span>
+          <label className="block text-black text-[14px] font-medium mb-2">
+          {t.password} <span className="text-red-500">*</span>
             </label>
             <input
               type="password"
