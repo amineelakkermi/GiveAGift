@@ -74,7 +74,27 @@ const Accordion = () => {
 
   return (
     <section dir={lang === "en" ? "ltr" : "rtl"} className={`relative z-20  overflow-hidden bg-white ${styles.padding}`}>
-      <div className={`${styles.marginY} flex flex-col justify-center items-center max-w-7xl mx-auto`}>
+      <div className="absolute hidden lg:block right-0 -bottom-8 w-1/2 
+      -z-10
+      max-w-[206px]">
+  <svg
+    viewBox="0 0 206 288"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    className="w-full h-auto"
+  >
+    <path
+      d="M144.459 146.982L36.8573 171.761L56.6807 257.843C58.8713 267.355 64.7511 275.608 73.0265 280.785C81.3019 285.963 91.2951 287.641 100.808 285.45L172.542 268.931M144.459 146.982L172.542 268.931M144.459 146.982L129.591 82.4213M144.459 146.982L33.2706 172.587C27.5631 173.902 21.5672 172.895 16.6019 169.789C11.6367 166.682 8.10884 161.731 6.79447 156.023L1.83862 134.503C0.524247 128.795 1.53102 122.799 4.63746 117.834C7.74389 112.869 12.6955 109.341 18.4031 108.027L129.591 82.4213M144.459 146.982L252.06 122.203L271.884 208.284C274.074 217.797 272.396 227.79 267.219 236.065C262.042 244.341 253.789 250.22 244.276 252.411L172.542 268.931M144.459 146.982L255.647 121.377C261.355 120.063 266.306 116.535 269.413 111.57C272.519 106.604 273.526 100.608 272.211 94.9009L267.256 73.3806C265.941 67.673 262.413 62.7214 257.448 59.615C252.483 56.5085 246.487 55.5017 240.779 56.8161L129.591 82.4213M129.591 82.4213L121.332 46.5542M129.591 82.4213L93.7241 90.6811C84.2116 92.8717 74.2184 91.1937 65.943 86.0163C57.6676 80.8389 51.7878 72.5862 49.5972 63.0736C47.4066 53.5611 49.0845 43.5679 54.2619 35.2925C59.4393 27.0171 67.6921 21.1374 77.2046 18.9467C81.9148 17.8621 86.7924 17.7157 91.5591 18.5161C96.3258 19.3165 100.888 21.0479 104.986 23.6115C109.083 26.1751 112.636 29.5206 115.44 33.4571C118.245 37.3936 120.247 41.844 121.332 46.5542M129.591 82.4213L165.458 74.1616C174.971 71.971 183.224 66.0912 188.401 57.8158C193.579 49.5404 195.256 39.5472 193.066 30.0347C190.875 20.5221 184.995 12.2694 176.72 7.09197C168.445 1.91458 158.452 0.236626 148.939 2.42725C139.426 4.61787 131.174 10.4976 125.996 18.773C120.819 27.0484 119.141 37.0416 121.332 46.5542"
+      stroke="#222A40"
+      strokeOpacity="0.2"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+      </div>
+
+      <div className={`flex z-20 flex-col justify-center items-center max-w-7xl mx-auto`}>
         <div className="-mx-4 flex flex-wrap">
           <div className="w-full px-4">
             {/* Titre */}
@@ -115,9 +135,11 @@ const AccordionItem = ({ header, text, lang }) => {
   const textAlign = lang === "en" ? "text-left" : "text-right";
 
   return (
-    <div className={`mb-8 ${active ? "min-h-[162.66px]" : "min-h-[122px]"} w-[99%] xl:min-w-[896px] rounded-[16px] bg-white pr-6 py-4
+    <div className={`my-8 ${active ? "min-h-[162.66px]" : "min-h-[122px]"}
+    w-full xs:min-w-[500px] sm:min-w-[600px] md:min-w-[700px] xl:min-w-[896px]
+    rounded-[16px] bg-white pr-6 py-4
       ${active ? "border-2 border-[#1E2330]" : ""}
-      sm:p-4 lg:px-4 xl:px-4`}
+      sm:p-4 lg:px-4 xl:px-4 z-20`}
     style={{boxSizing: 'border-box', boxShadow: '0px 6px 16px rgba(34, 42, 64, 0.18)' , display: 'flex', justifyContent: 'center' , alignItems: 'start' ,   flexDirection: 'column', gap: '10px'}}>
       <button className={`faq-btn flex w-full ${rowDir}`} onClick={handleToggle}>
         <div className={`${iconMargin} ${lang === "en" ? "rotate-180" : "rotate-0"}  flex h-10 w-10 shrink-0 items-center justify-center rounded-full`}>
@@ -136,8 +158,8 @@ const AccordionItem = ({ header, text, lang }) => {
           )}
         </div>
 
-        <div className={`w-full ${headerAlign} ${lang === "en" ? "mr-0" : "mr-6"} `}>
-          <h4 className="text-[20px] font-bold text-[#170F49]">{header}</h4>
+        <div className={`w-full ${headerAlign} ${lang === "en" ? "mr-0" : "mr-4"} `}>
+          <h4 className="text-[14px] sm:text-[18px] lg:text-[20px] font-bold text-[#170F49]">{header}</h4>
         </div>
       </button>
 
