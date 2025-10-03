@@ -25,23 +25,23 @@ const Accordion = () => {
         title: "Frequently Asked Questions",
         items: [
           {
-            header: "1. Is the card sent immediately?",
+            header: "Is the card sent immediately ?",
             text: "Yes, the digital card is sent to the recipient within seconds of confirming the order.",
           },
           {
-            header: "2. What payment methods are available?",
+            header: "What payment methods are available ?",
             text: "You can pay using the available electronic payment methods or cash if supported.",
           },
           {
-            header: "3. How does the card reach the recipient?",
+            header: "How does the card reach the recipient ?",
             text: "The card is delivered digitally to the recipient via the application.",
           },
           {
-            header: "4. Does the app work outside Saudi Arabia?",
+            header: "Does the app work outside Saudi Arabia ?",
             text: "Yes, the app is available internationally depending on the service terms.",
           },
           {
-            header: "5. Can I send a card to more than one person?",
+            header: "Can I send a card to more than one person ?",
             text: "Yes, you can send cards to multiple recipients using the app.",
           },
         ],
@@ -74,9 +74,10 @@ const Accordion = () => {
 
   return (
     <section dir={lang === "en" ? "ltr" : "rtl"} className={`relative z-20  overflow-hidden bg-white ${styles.padding}`}>
-      <div className="absolute hidden lg:block right-0 -bottom-8 w-1/2 
+      <div className="absolute hidden lg:block right-0 -bottom-0 lg:bottom-8
+      w-[150px] lg:w-[200px] h-[150px] lg:h-[200px]
       -z-10
-      max-w-[206px]">
+      ">
   <svg
     viewBox="0 0 206 288"
     fill="none"
@@ -129,42 +130,106 @@ const AccordionItem = ({ header, text, lang }) => {
     setActive((prev) => !prev);
   };
 
-  const rowDir = lang === "en" ? "flex-row text-left" : "flex-row-reverse text-right";
+  const rowDir = lang === "en" ? "flex-row" : "flex-row-reverse";
   const iconMargin = lang === "en" ? "mr-5" : "ml-5";
-  const headerAlign = lang === "en" ? "text-left" : "text-right";
-  const textAlign = lang === "en" ? "text-left" : "text-right";
+  const contentAlign = lang === "en" ? "text-left" : "text-right"; // Pour header et texte
 
   return (
-    <div className={`my-8 ${active ? "min-h-[162.66px]" : "min-h-[122px]"}
-    w-full xs:min-w-[500px] sm:min-w-[600px] md:min-w-[700px] xl:min-w-[896px]
-    rounded-[16px] bg-white pr-6 py-4
-      ${active ? "border-2 border-[#1E2330]" : ""}
-      sm:p-4 lg:px-4 xl:px-4 z-20`}
-    style={{boxSizing: 'border-box', boxShadow: '0px 6px 16px rgba(34, 42, 64, 0.18)' , display: 'flex', justifyContent: 'center' , alignItems: 'start' ,   flexDirection: 'column', gap: '10px'}}>
-      <button className={`faq-btn flex w-full ${rowDir}`} onClick={handleToggle}>
-        <div className={`${iconMargin} ${lang === "en" ? "rotate-180" : "rotate-0"}  flex h-10 w-10 shrink-0 items-center justify-center rounded-full`}>
+    <div
+      className={`my-8 ${
+        active ? "min-h-[162.66px]" : "min-h-[122px]"
+      } w-full xs:min-w-[500px] sm:min-w-[600px] md:min-w-[700px] xl:min-w-[896px]
+        rounded-[16px] bg-white pr-6 py-4
+        ${active ? "border-2 border-[#1E2330]" : ""}
+        py-4 px-6 z-20`}
+      style={{
+        boxSizing: "border-box",
+        boxShadow: "0px 6px 16px rgba(34, 42, 64, 0.18)",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "start",
+        flexDirection: "column",
+        gap: "10px",
+      }}
+    >
+      <button
+        dir="rtl"
+        className={`faq-btn flex justify-between items-center w-full ${rowDir}`}
+        onClick={handleToggle}
+      >
+        
+        {/* Icone */}
+        <div
+          className={`${iconMargin} ${
+            lang === "en" ? "rotate-180" : "rotate-0"
+          } flex h-[6] lg:h-10 w-6 lg:w-10 shrink-0 items-center justify-center rounded-full`}
+        >
           {active ? (
-           <svg width="51" height="51" viewBox="0 0 51 51" fill="none" xmlns="http://www.w3.org/2000/svg">
-           <circle cx="25.3309" cy="25.3309" r="25.3309" transform="matrix(-1 0 0 1 50.6602 0)" fill="#A3262A"/>
-           <path d="M33.5859 22.2212L25.3293 30.4405L17.0728 22.2212" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-           </svg>
-           
-          ) : (
-            <svg width="51" height="52" viewBox="0 0 51 52" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="25.3309" cy="25.3309" r="25.3309" transform="matrix(1.19249e-08 -1 -1 -1.19249e-08 50.6602 51.3232)" fill="#A3262A"/>
-            <path d="M28.439 34.249L20.2197 25.9924L28.439 17.7358" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <svg
+              width="51"
+              height="51"
+              viewBox="0 0 51 51"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                cx="25.3309"
+                cy="25.3309"
+                r="25.3309"
+                transform="matrix(-1 0 0 1 50.6602 0)"
+                fill="#A3262A"
+              />
+              <path
+                d="M33.5859 22.2212L25.3293 30.4405L17.0728 22.2212"
+                stroke="white"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
             </svg>
-
+          ) : (
+            <svg
+              width="51"
+              height="52"
+              viewBox="0 0 51 52"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                cx="25.3309"
+                cy="25.3309"
+                r="25.3309"
+                transform="matrix(1.19249e-08 -1 -1 -1.19249e-08 50.6602 51.3232)"
+                fill="#A3262A"
+              />
+              <path
+                d="M28.439 34.249L20.2197 25.9924L28.439 17.7358"
+                stroke="white"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
           )}
         </div>
 
-        <div className={`w-full ${headerAlign} ${lang === "en" ? "mr-0" : "mr-4"} `}>
-          <h4 className="text-[14px] sm:text-[18px] lg:text-[20px] font-bold text-[#170F49]">{header}</h4>
+        {/* Header */}
+        <div className={`w-full ${contentAlign}`}>
+          <h4
+            dir={lang === "ar" ? "rtl" : "ltr"}
+            className="text-[16px] sm:text-[18px] lg:text-[20px] font-bold text-[#170F49]"
+          >
+            {header}
+          </h4>
         </div>
+
       </button>
 
-      <div className={`${textAlign} duration-200 ease-in-out ${active ? "block" : "hidden"}`}>
-        <p className="text-[18px] font-normal leading-relaxed text-[#686868]">{text}</p>
+      {/* Texte */}
+      <div className={`${contentAlign} duration-200 ease-in-out ${active ? "block" : "hidden"}`}>
+        <p className="text-[14px] sm:text-[16px] lg:text-[18px] font-normal leading-relaxed text-[#686868]">
+          {text}
+        </p>
       </div>
     </div>
   );
