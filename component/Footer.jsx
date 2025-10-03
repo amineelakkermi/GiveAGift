@@ -97,9 +97,12 @@ const Footer = () => {
       ? {
           login: "Login",
           rights: `© ${currentYear} All rights reserved`,
+          joinUs: "Join from Zed stores",
+
         }
       : {
           login: "تسجيل الدخول",
+          joinUs: "انضم من متاجر زد",
           rights: `© ${currentYear} جميع الحقوق محفوظة`,
         };
 
@@ -123,10 +126,12 @@ const Footer = () => {
           <a href="/login" className="font-bold text-[12px] text-blue bg-white flex justify-center items-center px-4 py-2 gap-5  rounded-[36px]" aria-label={t.emailAria}>
           {t.login}
           </a>
+        
+          <a href="#" className="font-bold text-[12px] text-blue bg-[#E1BD80] flex justify-center items-center px-4 py-2 gap-5  rounded-[36px]" aria-label={t.emailAria}>
 
-          <div className="text-center">
-          <p className="text-[16px] text-white">{t.rights}</p>
-          </div>
+              {t.joinUs}
+          </a>
+
 
           {/* Social */}
           <div className="min-w-[220px]">

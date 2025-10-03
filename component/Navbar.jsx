@@ -35,8 +35,10 @@ export default function Navbar() {
   const t =
     lang === "en"
       ? {
-          features: "Application Features ",
+          features: "Application Features",
+          joinUs: "Join from Zed stores",
           about: "Our App",
+          joinUs: "Join",
       
           reviews: "Reviews",
           download: "Download the application",
@@ -44,6 +46,7 @@ export default function Navbar() {
         }
       : {
           features: "المميزات",
+          joinUs: "انضم من متاجر زد",
           about: "تعرف على تطبيقنا",
           reviews: "التقييمات",
           download: "حمل تطبيقنا",
