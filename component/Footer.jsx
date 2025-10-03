@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import logo from "../public/images/logo.png";
+import LoginComponent from "./LoginComponent";
 
 // Composants SVG pour les icônes
 const FacebookIcon = () => (
@@ -118,14 +119,23 @@ const Footer = () => {
     { href: "#", alt: "Instagram", icon: <InstagramIcon /> },
     { href: "#", alt: "TikTok", icon: <TikTokIcon /> },
   ];
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <footer dir={lang === "en" ? "ltr" : "rtl"} className="bg">
       <div className="mx-auto max-w-7xl px-6 py-12 lg:px-8">
         <div className="flex flex-wrap items-center justify-between gap-10">
           {/* LOGIN */}
-          <a href="/login" className="font-bold text-[12px] text-blue bg-white flex justify-center items-center px-4 py-2 gap-5  rounded-[36px]" aria-label={t.emailAria}>
+          <button
+          onClick={() => {
+          setIsOpen(true);
+          }}
+           className="font-bold text-[12px] text-blue bg-white flex justify-center items-center px-4 py-2 gap-5  rounded-[36px]" aria-label={t.emailAria}>
           {t.login}
-          </a>
+          </button>
+
+          {/* Login modal */}
+      <LoginComponent isOpen={isOpen} setIsOpen={setIsOpen} />
         
           <a href="#" className="font-bold text-[12px] text-blue bg-[#E1BD80] flex justify-center items-center px-4 py-2 gap-5  rounded-[36px]" aria-label={t.emailAria}>
 
