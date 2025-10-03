@@ -144,6 +144,9 @@ const Footer = () => {
             </div>
           </div>
         </div>
+        <div className="mt-8 border-t border-white/10 pt-6 text-center">
+          <p className="text-[16px] text-white">{t.rights}</p>
+        </div>
        
       </div>
     </footer>
