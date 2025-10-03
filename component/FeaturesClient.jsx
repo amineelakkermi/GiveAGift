@@ -160,9 +160,9 @@ export default function FeaturesClient({ lang = "ar" }) {
             <Image
               src={mockup4}
               alt="App Screen 3"
-              className="absolute -bottom-16 lg:-bottom-56 object-contain 
-              w-[250px] xs:w-[300px] sm:w-[350px] lg:w-[400px] 
-              h-[450px] xs:h-[500px] sm:h-[550px] lg:h-[800px]"
+              className="absolute -bottom-16 lg:-bottom-76 object-contain 
+              w-[250px] xs:w-[300px] sm:w-[350px] lg:w-[488px] 
+              h-[450px] xs:h-[500px] sm:h-[550px] lg:h-[1012px]"
               priority
             />
           </div>
