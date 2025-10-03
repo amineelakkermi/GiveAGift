@@ -131,24 +131,25 @@ const AccordionItem = ({ header, text, lang }) => {
   };
 
   const rowDir = lang === "en" ? "flex-row" : "flex-row-reverse";
-  const iconMargin = lang === "en" ? "mr-5" : "ml-5";
-  const contentAlign = lang === "en" ? "text-left" : "text-right"; // Pour header et texte
+  const contentAlign = lang === "en" ? "text-left" : "text-right";
+
+  // Padding horizontal conditionnel pour équilibrer
+  const horizontalPadding = lang === "en" ? "pl-6 pr-4" : "pr-6 pl-4";
+  const iconMargin = lang === "en" ? "ml-4" : "mr-4"; // marge entre icône et texte
 
   return (
     <div
       className={`my-8 ${
         active ? "min-h-[162.66px]" : "min-h-[122px]"
       } w-full xs:min-w-[500px] sm:min-w-[600px] md:min-w-[700px] xl:min-w-[896px]
-        rounded-[16px] bg-white pr-6 py-4
-        ${active ? "border-2 border-[#1E2330]" : ""}
-        py-4 px-6 z-20`}
+        rounded-[16px] bg-white ${horizontalPadding} py-4
+        ${active ? "border-2 border-[#1E2330]" : ""} z-20`}
       style={{
         boxSizing: "border-box",
         boxShadow: "0px 6px 16px rgba(34, 42, 64, 0.18)",
         display: "flex",
-        justifyContent: "center",
-        alignItems: "start",
         flexDirection: "column",
+        justifyContent: "center",
         gap: "10px",
       }}
     >
@@ -157,12 +158,9 @@ const AccordionItem = ({ header, text, lang }) => {
         className={`faq-btn flex justify-between items-center w-full ${rowDir}`}
         onClick={handleToggle}
       >
-        
-        {/* Icone */}
+        {/* Icône */}
         <div
-          className={`${iconMargin} ${
-            lang === "en" ? "rotate-180" : "rotate-0"
-          } flex h-[6] lg:h-10 w-6 lg:w-10 shrink-0 items-center justify-center rounded-full`}
+          className={`${iconMargin} ${lang === "en" ? "rotate-180" : "rotate-0"} flex h-[6] lg:h-10 w-6 lg:w-10 shrink-0 items-center justify-center rounded-full`}
         >
           {active ? (
             <svg
@@ -214,7 +212,7 @@ const AccordionItem = ({ header, text, lang }) => {
         </div>
 
         {/* Header */}
-        <div className={`w-full ${contentAlign}`}>
+        <div className={`w-full flex flex-col justify-center ${contentAlign}`}>
           <h4
             dir={lang === "ar" ? "rtl" : "ltr"}
             className="text-[16px] sm:text-[18px] lg:text-[20px] font-bold text-[#170F49]"
@@ -222,7 +220,6 @@ const AccordionItem = ({ header, text, lang }) => {
             {header}
           </h4>
         </div>
-
       </button>
 
       {/* Texte */}
