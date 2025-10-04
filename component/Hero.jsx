@@ -85,8 +85,7 @@ export default function Hero({ lang = "ar" }) {
           src={mockup1}
           alt="App Screen 1"
           className="w-full object-cover translate-y-20 sm:translate-y-16 xl:translate-y-4 
-            z-30 max-w-[180px] sm:max-w-[280px] lg:max-w-[300px] xl:max-w-[350px]"
-        />
+            z-30 max-w-[180px] sm:max-w-[280px] lg:max-w-[300px] xl:min-w-[350px]" />
       </picture>
       <Image
         src={mockup3}
