@@ -2,7 +2,7 @@ const styles = {
     boxWidth: "xl:max-w-[1280px] w-full",
   
     title: "text-[30px] lg:text-[36px]  font-medium",
-    paragraph: "font-normal text-[16px] text-white leading-[34.8px]",
+    paragraph: "font-normal mt-5 text-[16px] text-white leading-[34.8px]",
     paragraph2: "font-normal text-[14px] lg:text-[22px] leading-[30.8px] lg:leading-[45px]",
   
     flexCenter: "flex justify-center items-center",

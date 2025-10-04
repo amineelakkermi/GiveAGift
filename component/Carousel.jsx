@@ -44,7 +44,7 @@ export default function Carousel() {
       </div>
       <Title text={t.title} mt="mt-0" textColor="text-white" svgColor="#fff" />
 
-      <div dir="rtl" className={`lg:mb-16 mb-6 relative w-full max-w-7xl mx-auto`}>
+      <div dir="rtl" className={`lg:my-16 my-6 relative w-full max-w-7xl mx-auto`}>
       <Swiper
       effect="coverflow"
       centeredSlides={true}

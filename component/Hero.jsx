@@ -35,7 +35,7 @@ export default function Hero({ lang = "ar" }) {
   className="relative bg flex justify-center items-center w-full min-h-[100dvh] overflow-y-hidden lg:px-12 px-6 lg:pt-12 pt-6 pb-0"
 >
   {/* Container */}
-  <div className="relative h-full max-w-7xl mx-auto z-40 flex gap-8 flex-col justify-center items-center text-center">
+  <div className="relative h-full max-w-7xl mx-auto z-40 flex gap-0 flex-col justify-center items-center text-center">
     
     {/* Title */}
     <Title
@@ -85,7 +85,7 @@ export default function Hero({ lang = "ar" }) {
           src={mockup1}
           alt="App Screen 1"
           className="w-full object-cover translate-y-20 sm:translate-y-16 xl:translate-y-4 
-            z-30 max-w-[180px] sm:max-w-[280px] lg:max-w-[300px] xl:min-w-[350px]" />
+            z-30 max-w-[180px] sm:max-w-[280px] lg:max-w-[300px] xl:max-w-[350px]" />
       </picture>
       <Image
         src={mockup3}
