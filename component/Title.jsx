@@ -11,7 +11,7 @@ export default function Title({
   const { lang } = useLanguage();
   return (
     <div
-      className={`${styles.title} ${mt} sm:translate-x-10 sm:translate-y-2 relative text-center flex justify-center items-center relative`}
+      className={`${styles.title} ${mt} ${lang === "ar" ? "sm:translate-x-10" : "sm:-translate-x-10"} sm:translate-y-2 relative text-center flex justify-center items-center relative`}
     >
       {/* SVG */}
       <div className={` -translate-y-8 translate-x-0 w-[40px] md:w-[73px] h-[40px] md:h-[73px]
