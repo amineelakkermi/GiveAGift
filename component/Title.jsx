@@ -11,12 +11,12 @@ export default function Title({
   const { lang } = useLanguage();
   return (
     <div
-      className={`${styles.title} ${mt} text-center relative flex justify-center items-center relative`}
+      className={`${styles.title} ${mt} sm:translate-x-10 sm:translate-y-2 relative text-center flex justify-center items-center relative`}
     >
       {/* SVG */}
-      <div className={` mb-6 w-[40px] md:w-[73px] h-[40px] md:h-[73px]
-      hidden sm:flex ${lang === "en" ? "rotate-230" : "rotate-0"}
-      justify-center items-center`}>
+      <div className={` -translate-y-8 translate-x-0 w-[40px] md:w-[73px] h-[40px] md:h-[73px]
+      hidden sm:block ${lang === "en" ? "rotate-230" : "rotate-0"}
+      `}>
         <svg
           width="full"
           height="full"

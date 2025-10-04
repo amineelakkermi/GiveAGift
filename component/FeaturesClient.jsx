@@ -133,9 +133,9 @@ export default function FeaturesClient({ lang = "ar" }) {
       className={`relative overflow-hidden w-full min-h-[100vh] ${styles.padding} bg-[#fff]`}
     >
       <div
-        className={`flex flex-col  lg:mt-0 mt-6
+        className={`relative flex flex-col  lg:mt-0 mt-6
         max-w-7xl mx-auto z-40 
-        flex justify-center items-center gap-16 lg:gap-8 relative`}
+        flex justify-center items-center gap-16 lg:gap-8`}
       >
        
         {/* Title */}
