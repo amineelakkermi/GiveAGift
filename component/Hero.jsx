@@ -36,7 +36,7 @@ export default function Hero({ lang = "ar" }) {
         flex justify-center items-center w-full h-screen overflow-y-hidden lg:px-12 px-6 lg:pt-12 pt-6 pb-0"
     >
       {/* Container */}
-      <div className="relative h-full max-w-7xl mx-auto z-40 flex flex-col justify-center items-center text-center">
+      <div className="relative h-full max-w-7xl mx-auto z-40 flex gap-8 sm:gap-0 flex-col justify-center items-center text-center">
         
         {/* Title */}
         <Title

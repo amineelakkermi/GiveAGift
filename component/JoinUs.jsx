@@ -1,4 +1,5 @@
 "use client";
+import styles from "@/styles/style";
 import { useLanguage } from "./LanguageProvider";
 import Title from "./Title";
 
@@ -31,7 +32,8 @@ export default function JoinUs() {
     <section
       id="join-us"
       dir={lang === "ar" ? "rtl" : "ltr"}
-      className="w-full min-h-[100vh] flex flex-col items-center justify-center px-6 pt-12 bg-white"
+      className={`bg-white ${styles.padding} w-full min-h-[100vh]
+      flex gap-8 flex-col items-center justify-center`}
     >
       {/* Titre */}
       <Title

@@ -17,12 +17,12 @@ export default function Download({ lang = "ar" }) {
       ? {
           title: " Download the app now and start your experience",
           p1: "Join thousands of users who have chosen comfort and professionalism.",
-          p2: "Whether you're a customer looking for premium service, or a barber looking to expand your business — our app is built for you.",
-        }
+          p2: "Choose the card, add your touch, and send it instantly!"
+      }
       : {
           title: "حمّل تطبيق  GiveAGift الآن",
           p1: "استمتع بتجربة إهداء سريعة، آمنة، وممتعة — كل ذلك من هاتفك.",
-          p2: "استمتع بتجربة إهداء سريعة، آمنة، وممتعة — كل ذلك من هاتفك. اختر البطاقة، أضف لمستك، وأرسلها فورًا!",
+          p2: "اختر البطاقة، أضف لمستك، وأرسلها فورًا!",
         };
 
   return (
@@ -31,9 +31,9 @@ export default function Download({ lang = "ar" }) {
       className={`lg:px-12 px-6 lg:pb-12 pb-6 bg-white flex justify-center items-center`}
     >
       {/* Container */}
-      <div className={`${styles.marginY} relative  w-full max-w-[1250px] flex flex-col gap-5
+      <div className={`${styles.marginY} relative  w-full max-w-[1250px] min-h-[341px] flex flex-col gap-4
       justify-center items-center text-center rounded-[40px]
-      bg px-6 py-6 md:px-12 lg:py-8
+      bg px-6 md:px-12 py-16 lg:py-8
       overflow-hidden`}>
         
       <div className="absolute hidden lg:block bottom-0 right-5 w-[150px] sm:w-[180px] md:w-[200px] lg:w-[247px] h-auto opacity-100">
@@ -61,8 +61,10 @@ export default function Download({ lang = "ar" }) {
       svgColor="#fff"
       />
         
+      <div className="flex flex-col gap-2">
       <p className={`${styles.paragraph} max-w-[650px] z-20 text-white`}>{t.p1}</p>
       <p className={`${styles.paragraph} max-w-[650px] z-20 text-white`}>{t.p2}</p>
+      </div>
 
         {/* Download Buttons */}
         <div className="flex gap-8 flex-wrap justify-center z-20">

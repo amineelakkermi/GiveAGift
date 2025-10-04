@@ -78,7 +78,7 @@ const Accordion = () => {
       w-[150px] lg:w-[200px] h-[150px] lg:h-[200px]
       -z-10
       ">
-  <svg
+      <svg
     viewBox="0 0 206 288"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
@@ -92,10 +92,10 @@ const Accordion = () => {
       strokeLinecap="round"
       strokeLinejoin="round"
     />
-  </svg>
+      </svg>
       </div>
 
-      <div className={`flex z-20 flex-col justify-center items-center max-w-7xl mx-auto`}>
+      <div className={`z-20 flex gap-8 flex-col justify-center items-center max-w-7xl mx-auto`}>
         <div className="-mx-4 flex flex-wrap">
           <div className="w-full px-4">
             {/* Titre */}

@@ -32,7 +32,7 @@ export default function Carousel() {
     <section
       id="about"
       className={`w-full relative min-h-[100vh]
-      flex flex-col gap-20 justify-center items-center
+      flex flex-col gap-8 justify-center items-center
       bg-gradient-to-b from-[#1E2330] to-[#161A27]
       ${styles.padding}`}
     >
@@ -42,7 +42,7 @@ export default function Carousel() {
       </svg>
 
       </div>
-      <Title text={t.title} mt="mt-8" textColor="text-white" svgColor="#fff" />
+      <Title text={t.title} mt="mt-0" textColor="text-white" svgColor="#fff" />
 
       <div dir="rtl" className={`lg:mb-16 mb-6 relative w-full max-w-7xl mx-auto`}>
       <Swiper
